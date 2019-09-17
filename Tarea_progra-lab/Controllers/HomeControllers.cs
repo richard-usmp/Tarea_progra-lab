@@ -25,7 +25,7 @@ namespace PrograLabPC1.Controllers
         
         [HttpPost]
         public IActionResult Registro(Student stu){
-            Console.WriteLine("Registro");  
+            Console.WriteLine("Registro"); 
             Random rnd = new Random(); 
             stu.Edad=DateTime.Now.Year - stu.Date.Year;
             //calculo total 
@@ -41,15 +41,25 @@ namespace PrograLabPC1.Controllers
 
             //aleatorio
             stu.Id = rnd.Next(10000000, 99999999);
-            
             _context.Add(stu);
             _context.SaveChanges();
             return View(stu);
         }
 
-        public IActionResult details(){
-            Console.WriteLine("Details");
-            return View();
+        public IActionResult detail(int? id){
+            Console.WriteLine("detail");
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var student = _context.Student
+                .SingleOrDefault(m => m.Id == id);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            return View(student);
         }
     }
     

@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace PrograLabPC1.Models
 {
     public class Student{
+        [Key]
         public int Id{get; set;}
         
         //[Display(Name="Nombre")]
