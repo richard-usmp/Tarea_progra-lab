@@ -27,10 +27,8 @@ namespace PrograLabPC1.Controllers
             Console.WriteLine("Calculo");  
             Random rnd = new Random(); 
             String curso=stu.Curso;  
-            stu.Edad=DateTime.Now.Year - stu.Date.Year;      
-            int sTotal=0;
-            double total=0;
-
+            stu.Edad=DateTime.Now.Year - stu.Date.Year;
+            
             //calculo total 
             if(curso.Equals("c1")){
                 stu.Credito=4;
@@ -41,6 +39,7 @@ namespace PrograLabPC1.Controllers
             }
 
             stu.TotalPagar=stu.Credito*100;
+
             //aleatorio
             stu.Id = rnd.Next(10000000, 99999999);
             
