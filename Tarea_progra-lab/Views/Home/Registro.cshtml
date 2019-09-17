@@ -1,0 +1,15 @@
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model PrograLabPC1.Models.Student;
+<!DOCTYPE html>
+<html>
+    <title>Student app</title>
+<body>
+    <h1><b>Registrado</b></h1>
+    <h3>
+        <label style="text-decoration: underline;">Nombre:</label> @Html.DisplayTextFor(model => model.Name) <br>
+        <label style="text-decoration: underline;">Curso:</label> @Html.DisplayTextFor(model => model.Curso) <br>
+        <label style="text-decoration: underline;">Creditos:</label> @Html.DisplayTextFor(model => model.Credito) <br>
+        <label style="text-decoration: underline;">Total a pagar:</label> @Html.DisplayTextFor(model => model.Total) <br>
+    </h3>
+</body>
+</html>

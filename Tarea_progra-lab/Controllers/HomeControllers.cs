@@ -1,6 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
 using PrograLabPC1.Models;
+using System.Linq;
 
 namespace PrograLabPC1.Controllers
 {
@@ -13,41 +14,43 @@ namespace PrograLabPC1.Controllers
         {
             _context = context;
         }
-
         public IActionResult Index(){
             Console.WriteLine("Index");
+            return View(_context.Student.ToList());
+        }
+        public IActionResult Create(){
             return View();
         }
         
         [HttpPost]
-        public IActionResult calculo(Factura cli){
+        public IActionResult calculo(Student stu){
             Console.WriteLine("Calculo");  
             Random rnd = new Random(); 
-            int cantidad= cli.Cantidad;        
+            String curso=stu.Curso;  
+            stu.Edad=DateTime.Now.Year - stu.Date.Year;      
             int sTotal=0;
             double total=0;
 
-            //calculo total
-            if(cli.Producto.Equals("p1")){
-                sTotal=100 * cantidad;
-                total = sTotal * 1.18;
-            }else if(cli.Producto.Equals("p2")){
-                sTotal=50 * cantidad;
-                total = sTotal * 1.18;
-            }else if(cli.Producto.Equals("p3")){
-                sTotal=80 * cantidad;
-                total = sTotal * 1.18;
-            }   
+            //calculo total 
+            if(curso.Equals("c1")){
+                stu.Credito=4;
+            }else if(curso.Equals("c2")){
+                stu.Credito=5;
+            }else if(curso.Equals("c3")){
+                stu.Credito=6;
+            }
 
+            stu.TotalPagar=stu.Credito*100;
             //aleatorio
-            cli.id = rnd.Next(10000000, 99999999);
+            stu.Id = rnd.Next(10000000, 99999999);
             
-            cli.Subtotal= sTotal;
-            cli.Total = total;
-
-            _context.Add(cli);
+            _context.Add(stu);
             _context.SaveChanges();
-            return View(cli);
+            return View(stu);
+        }
+
+        public IActionResult details(){
+            return View();
         }
     }
     

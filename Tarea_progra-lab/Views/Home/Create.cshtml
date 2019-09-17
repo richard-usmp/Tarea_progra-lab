@@ -1,0 +1,36 @@
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model PrograLabPC1.Models.Student;
+
+
+<!DOCTYPE html>
+<html>
+    <title>Student app</title>
+<body>
+    <h1>Student app</h1><br>
+   
+    <div>
+        <form asp-controller="Home" asp-action="Registro">
+            <label>Cliente: </label><input asp-for="Name"/><br/>
+
+            <label>Birth: </label><input asp-for="Date"/><br/>
+
+            <label>Hobbie:  </label>
+            <select asp-for="Hobbie">
+                <option value="h1">Nadar</option>
+                <option value="h2">Bicicleta</option>
+                <option value="h3">Guitarra</option>
+            </select><br>
+
+            <label>Curso: </label>
+            <select asp-for="Hobbie">
+                <option value="c1">Matematica</option>
+                <option value="c2">Leguaje</option>
+                <option value="c3">Fisica</option>
+            </select><br> 
+
+            <input type="submit" value="Registrar"/>
+        </form>
+    </div>
+    
+</body>
+</html>

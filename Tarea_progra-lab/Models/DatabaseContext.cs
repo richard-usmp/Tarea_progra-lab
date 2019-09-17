@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
         {
         }
 
-         public DbSet<Factura> Factura { get; set; }
+         public DbSet<Student> Student { get; set; }
 
      }
 } 
