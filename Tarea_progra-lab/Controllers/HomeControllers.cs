@@ -19,22 +19,21 @@ namespace PrograLabPC1.Controllers
             return View(_context.Student.ToList());
         }
         public IActionResult Create(){
+            Console.WriteLine("Create");
             return View();
         }
         
         [HttpPost]
-        public IActionResult calculo(Student stu){
-            Console.WriteLine("Calculo");  
+        public IActionResult Registro(Student stu){
+            Console.WriteLine("Registro");  
             Random rnd = new Random(); 
-            String curso=stu.Curso;  
             stu.Edad=DateTime.Now.Year - stu.Date.Year;
-            
             //calculo total 
-            if(curso.Equals("c1")){
-                stu.Credito=4;
-            }else if(curso.Equals("c2")){
+            if(stu.Curso.Equals("c1")){
+                stu.Credito=4;               
+            }else if(stu.Curso.Equals("c2")){
                 stu.Credito=5;
-            }else if(curso.Equals("c3")){
+            }else if(stu.Curso.Equals("c3")){
                 stu.Credito=6;
             }
 
@@ -49,6 +48,7 @@ namespace PrograLabPC1.Controllers
         }
 
         public IActionResult details(){
+            Console.WriteLine("Details");
             return View();
         }
     }
