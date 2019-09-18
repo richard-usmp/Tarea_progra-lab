@@ -14286,11 +14286,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ricardo\\Documents\\Tarea_progra-lab\\Tarea_progra-lab\\PrograLabPC1.csproj",
+      "projectUniqueName": "E:\\Ricardo\\Documentos\\Tarea_progra-lab\\Tarea_progra-lab\\PrograLabPC1.csproj",
       "projectName": "PrograLabPC1",
-      "projectPath": "C:\\Users\\Ricardo\\Documents\\Tarea_progra-lab\\Tarea_progra-lab\\PrograLabPC1.csproj",
+      "projectPath": "E:\\Ricardo\\Documentos\\Tarea_progra-lab\\Tarea_progra-lab\\PrograLabPC1.csproj",
       "packagesPath": "C:\\Users\\Ricardo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ricardo\\Documents\\Tarea_progra-lab\\Tarea_progra-lab\\obj\\",
+      "outputPath": "E:\\Ricardo\\Documentos\\Tarea_progra-lab\\Tarea_progra-lab\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
