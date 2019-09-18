@@ -29,11 +29,11 @@ namespace PrograLabPC1.Controllers
             Random rnd = new Random(); 
             stu.Edad=DateTime.Now.Year - stu.Date.Year;
             //calculo total 
-            if(stu.Curso.Equals("c1")){
+            if(stu.Curso.Equals("Matematica")){
                 stu.Credito=4;               
-            }else if(stu.Curso.Equals("c2")){
+            }else if(stu.Curso.Equals("Lenguaje")){
                 stu.Credito=5;
-            }else if(stu.Curso.Equals("c3")){
+            }else if(stu.Curso.Equals("Fisica")){
                 stu.Credito=6;
             }
 
